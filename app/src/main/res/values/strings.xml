@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Easy Budget</string>
+    <string name="email_label">Email</string>
+    <string name="password_label">Senha</string>
+    <string name="login_label">Login</string>
+    <string name="client_data_title">DADOS DO CLIENTE</string>
+    <string name="client_address_title">ENDEREÇO DO CLIENTE</string>
+    <string name="products_title">PRODUTOS</string>
+    <string name="quantity_label">Qtd.</string>
+    <string name="save_label">Salvar</string>
+    <string name="add_product_label">Adicionar produto</string>
+    <plurals name="product_plural">
+        <item quantity="one">%d produto</item>
+        <item quantity="other">%d produtos</item>
+    </plurals>
+</resources>

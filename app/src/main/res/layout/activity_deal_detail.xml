@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.deal.DealDetailActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/default_dimen"
+        android:fitsSystemWindows="false"
+        app:layout_constraintBottom_toTopOf="@id/btnSave"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivBackArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_dimen"
+                android:layout_marginTop="@dimen/default_dimen"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_back_arrow" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvClientData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_dimen"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="@dimen/small_dimen">
+
+                    <TextView
+                        android:id="@+id/tvClientDataTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/small_dimen"
+                        android:text="@string/client_data_title"
+                        android:textSize="12sp"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/vClientDataSeparator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/tvClientDataTitle" />
+
+                    <ImageView
+                        android:id="@+id/ivClientName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_dimen"
+                        android:layout_marginTop="@dimen/small_dimen"
+                        android:src="@drawable/ic_profile"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/vClientDataSeparator" />
+
+                    <TextView
+                        android:id="@+id/tvClientName"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/small_dimen"
+                        android:maxLines="1"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/ivClientName"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivClientName"
+                        app:layout_constraintTop_toTopOf="@id/ivClientName"
+                        tools:text="@tools:sample/full_names" />
+
+                    <ImageView
+                        android:id="@+id/ivClientEmail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_dimen"
+                        android:layout_marginTop="@dimen/small_dimen"
+                        android:src="@drawable/ic_email"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivClientName" />
+
+                    <TextView
+                        android:id="@+id/tvClientEmail"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/small_dimen"
+                        android:maxLines="1"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/ivClientEmail"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivClientEmail"
+                        app:layout_constraintTop_toTopOf="@id/ivClientEmail"
+                        tools:text="email@gmail.com" />
+
+                    <ImageView
+                        android:id="@+id/ivClientPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_dimen"
+                        android:layout_marginTop="@dimen/small_dimen"
+                        android:src="@drawable/ic_phone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/ivClientEmail" />
+
+                    <TextView
+                        android:id="@+id/tvClientPhone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginHorizontal="@dimen/small_dimen"
+                        android:maxLines="1"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@id/ivClientPhone"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/ivClientPhone"
+                        app:layout_constraintTop_toTopOf="@id/ivClientPhone"
+                        tools:text="(51) 993149823" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvAddressData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/default_dimen"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingBottom="@dimen/small_dimen">
+
+                    <TextView
+                        android:id="@+id/tvAddressTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/small_dimen"
+                        android:text="@string/client_address_title"
+                        android:textSize="12sp"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/vAddressDataSeparator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/tvAddressTitle" />
+
+                    <ImageView
+                        android:id="@+id/ivAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_dimen"
+                        android:layout_marginTop="@dimen/small_dimen"
+                        android:src="@drawable/ic_location_pin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/vAddressDataSeparator" />
+
+                    <TextView
+                        android:id="@+id/tvAddressState"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/small_dimen"
+                        app:layout_constraintBottom_toBottomOf="@id/ivAddress"
+                        app:layout_constraintStart_toEndOf="@id/ivAddress"
+                        app:layout_constraintTop_toTopOf="@id/ivAddress"
+                        tools:text="RS" />
+
+                    <TextView
+                        android:id="@+id/tvAddressCity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_dimen"
+                        app:layout_constraintStart_toStartOf="@id/tvAddressState"
+                        app:layout_constraintTop_toBottomOf="@id/ivAddress"
+                        tools:text="Porto Alegre" />
+
+                    <TextView
+                        android:id="@+id/tvAddressStreetNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/small_dimen"
+                        app:layout_constraintStart_toStartOf="@id/tvAddressCity"
+                        app:layout_constraintTop_toBottomOf="@id/tvAddressCity"
+                        tools:text="Rua, 50" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/default_dimen"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/tvProductsTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingVertical="@dimen/small_dimen"
+                        android:text="@string/products_title"
+                        android:textSize="12sp"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/vProductsSeparator"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/tvProductsTitle" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvProducts"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:orientation="vertical"
+                        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/vProductsSeparator"
+                        tools:itemCount="1"
+                        tools:listitem="@layout/item_deal_product" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/default_dimen"
+                app:strokeColor="@color/white"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/small_dimen">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total" />
+
+                    <TextView
+                        android:id="@+id/tvDealTotal"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_weight="1"
+                        android:gravity="end"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnAddProduct"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_dimen"
+        android:layout_marginEnd="@dimen/small_dimen"
+        android:layout_marginBottom="@dimen/default_dimen"
+        android:backgroundTint="@color/new_color_test"
+        android:elevation="0dp"
+        android:text="@string/add_product_label"
+        android:textSize="12sp"
+        app:cornerRadius="@dimen/xxlarge_dimen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSave"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSave"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/small_dimen"
+        android:layout_marginEnd="@dimen/default_dimen"
+        android:layout_marginBottom="@dimen/default_dimen"
+        android:backgroundTint="@color/white"
+        android:elevation="0dp"
+        android:text="@string/save_label"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:cornerRadius="@dimen/xxlarge_dimen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnAddProduct" />
+
+    <ProgressBar
+        android:id="@+id/loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnSave"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

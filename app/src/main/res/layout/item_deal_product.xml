@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="br.com.orcamentofacil.ui.utils.ExtensionsKt" />
+
+        <variable
+            name="item"
+            type="br.com.orcamentofacil.domain.Deal.DealProduct" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/small_dimen">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvItemName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/small_dimen"
+                android:layout_marginTop="@dimen/small_dimen"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{item.product.name}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:flow_verticalStyle="packed"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Produto" />
+
+            <TextView
+                android:id="@+id/tvItemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{ExtensionsKt.formatPriceBR(item.product.price)}"
+                app:layout_constraintStart_toStartOf="@id/tvItemName"
+                app:layout_constraintTop_toBottomOf="@id/tvItemName"
+                tools:text="R$100,00" />
+
+            <TextView
+                android:id="@+id/tvProductTotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/small_dimen"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tvItemName"
+                app:layout_constraintTop_toBottomOf="@id/tvItemPrice"
+                tools:text="Total: R$500,00" />
+
+            <ImageView
+                android:id="@+id/btnMore"
+                android:layout_width="@dimen/medium_dimen"
+                android:layout_height="@dimen/medium_dimen"
+                android:layout_marginEnd="@dimen/small_dimen"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_add"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/tvQuantity"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:maxWidth="100dp"
+                android:paddingHorizontal="@dimen/small_dimen"
+                android:text="@{String.valueOf(item.quantity)}"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/btnMore"
+                app:layout_constraintEnd_toStartOf="@id/btnMore"
+                app:layout_constraintTop_toTopOf="@id/btnMore"
+                tools:text="10" />
+
+            <ImageView
+                android:id="@+id/btnLess"
+                android:layout_width="@dimen/medium_dimen"
+                android:layout_height="@dimen/medium_dimen"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_remove"
+                app:layout_constraintBottom_toBottomOf="@id/btnMore"
+                app:layout_constraintEnd_toStartOf="@id/tvQuantity"
+                app:layout_constraintTop_toTopOf="@id/btnMore"
+                app:tint="@color/black" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="xxlarge_dimen">64dp</dimen>
+    <dimen name="xlarge_dimen">48dp</dimen>
+    <dimen name="large_dimen">32dp</dimen>
+    <dimen name="medium_dimen">24dp</dimen>
+    <dimen name="default_dimen">16dp</dimen>
+    <dimen name="small_dimen">8dp</dimen>
+    <dimen name="xsmall_dimen">4dp</dimen>
+    <dimen name="xxsmall_dimen">2dp</dimen>
+</resources>
